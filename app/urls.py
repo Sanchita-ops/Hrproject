@@ -26,6 +26,7 @@ urlpatterns = [
     path('remove_emp',views.removeemp,name='remove_emp'),
     path('remove_emp/<int:emp_id>/',views.removeemp,name='remove_emp'),
     path('filter-emp',views.filteremp,name='filter-emp'),
+    path('attendance-emp',views.attendance,name='attendance-emp'),
     
 
 ]
