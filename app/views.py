@@ -1,5 +1,5 @@
 from django.shortcuts import render,HttpResponse,get_object_or_404, redirect
-from .models import Employee,Department
+from .models import Employee,Department,Role
 from datetime import datetime
 from django.db.models import Q,Sum,Avg
 
@@ -59,7 +59,12 @@ def filteremp(request):
         name = request.POST['name']
         dept = request.POST['dept']
         role = request.POST['role']
+        print(name,dept,role)
         emps = Employee.objects.all()
+        roles= Role.objects.all()
+        print(roles)
+        
+        print(emps)
         if name:
             emps = emps.filter(Q(first_name__icontains=name) | Q(last_name__icontains = name))
         if dept:
